@@ -4,7 +4,14 @@
   align-items: center;
   border: 1px black solid;
   border-radius: 5px;
-  background-color: aliceblue;
+  background-color: #39FF14;
+  color: black;
   padding: 15px;
   margin: 20px;
+  transition: all 0.35s ease;
+}
+
+.container:hover {
+  transform: scale(1.1);
+  transition: all 0.35s ease;
 }

@@ -1,8 +1,8 @@
 ---
-title: 'NCT Dream'
-date: '2023-09-07'
+title: 'WayV'
+date: '2023-09-09'
 duration: '2 hrs'
-summary: 'Learn more about the group NCT Dream'
+summary: 'Learn more about the group WayV'
 cover_image: '/public/nct-127.jpg'
 ---
 

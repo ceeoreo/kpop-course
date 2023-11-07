@@ -13,7 +13,7 @@ export default function Course({ courseData }) {
       <div>
         {courseData.title}
         <br />
-        {date}
+        {courseData.date}
         <br />
         <div dangerouslySetInnerHTML={{ __html: courseData.contentHtml }} />
       </div>
