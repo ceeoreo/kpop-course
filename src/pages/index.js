@@ -1,12 +1,15 @@
 import Head from 'next/head';
-// import Image from 'next/image'
+import Image from 'next/image';
 // import { Inter } from 'next/font/google'
 import Link from 'next/link';
 import NavBar from '../components/NavBar';
-import CourseList from '@/components/CourseList';
+// import CourseList from '@/components/CourseList';
 import Testimonials from '@/components/Testimonials';
+import { getSortedCoursesData } from '@/lib/courses';
+import CourseListStyles from "../styles/CourseList.module.css";
+import CourseStyles from "../styles/Course.module.css";
 
-export default function Home() {
+export default function Home({ allCoursesData }) {
   return (
     <>
       <Head>
@@ -18,9 +21,38 @@ export default function Home() {
       <h1>Introducing NCT the Course</h1>
       <p> Your one stop shop for learning everything about the K-pop supergroup NCT.</p>
       <div>
-        <CourseList />
+      <h2 className={CourseListStyles.featured}> Featured Courses</h2>
+        <div className={CourseListStyles.container}>
+              {allCoursesData.map(({ id, duration, title, cover_image, summary}) => (
+                <div className={CourseStyles.container}>
+                  <ul>
+                    <li key={id}>
+                      <Image 
+                        src={cover_image}
+                        width={260}
+                        height={210}
+                        alt="Picture of Kpop group"
+                      />
+                    </li>
+                    <li>{title}</li>
+                    <li>{duration}</li>
+                    <li>{summary}</li>
+                  </ul>
+                </div>
+              ))}
+        </div>
       </div>
       <Testimonials />
     </>
   )
+}
+
+export async function getStaticProps() {
+  const allCoursesData = getSortedCoursesData();
+
+  return {
+    props: {
+      allCoursesData,
+    },
+  }
 }

@@ -3,7 +3,7 @@ title: 'NCT'
 date: '2023-09-09'
 duration: '2 hrs'
 summary: 'Learn more about the group NCT'
-cover_image: '/public/nct-127.jpg'
+cover_image: '/../public/nct.jpg'
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
