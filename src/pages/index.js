@@ -3,7 +3,6 @@ import Image from 'next/image';
 // import { Inter } from 'next/font/google'
 import Link from 'next/link';
 import NavBar from '../components/NavBar';
-// import CourseList from '@/components/CourseList';
 import Testimonials from '@/components/Testimonials';
 import { getSortedCoursesData } from '@/lib/courses';
 import CourseListStyles from "../styles/CourseList.module.css";
@@ -24,6 +23,7 @@ export default function Home({ allCoursesData }) {
       <h2 className={CourseListStyles.featured}> Featured Courses</h2>
         <div className={CourseListStyles.container}>
               {allCoursesData.map(({ id, duration, title, cover_image, summary}) => (
+                <Link href={`/courses/${id}`}>
                 <div className={CourseStyles.container}>
                   <ul>
                     <li key={id}>
@@ -34,11 +34,12 @@ export default function Home({ allCoursesData }) {
                         alt="Picture of Kpop group"
                       />
                     </li>
-                    <li>{title}</li>
-                    <li>{duration}</li>
-                    <li>{summary}</li>
+                    <li className={CourseStyles.details}>{title}</li>
+                    <li className={CourseStyles.details}>{duration}</li>
+                    <li className={CourseStyles.details}>{summary}</li>
                   </ul>
                 </div>
+                </Link>
               ))}
         </div>
       </div>

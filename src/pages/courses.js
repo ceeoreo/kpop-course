@@ -8,7 +8,6 @@ export default function Courses({ allCoursesData }) {
       <NavBar />
       <h1> Courses </h1>
       <section>
-        <h2>Blog</h2>
         <ul>
           {allCoursesData.map(({ id, date, title }) => (
             <li key={id}>

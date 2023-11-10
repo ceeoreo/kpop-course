@@ -13,6 +13,6 @@
   transition: all 0.35s ease;
 }
 
-.course__info {
-  padding: 10px;
+.details {
+  padding: 5px 15px;
 }
